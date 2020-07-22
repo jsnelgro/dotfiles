@@ -1,7 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"   Filename: .vimrc                                                         "
-" Maintainer: Michael J. Smalley <michaeljsmalley@gmail.com>                 "
-"        URL: http://github.com/michaeljsmalley/dotfiles                     "
+" Filename: .vimrc                                                           "
+" Maintainer: Johnny Snelgrove                                               "
+" URL: http://github.com/jsnelgro/dotfiles                                   "
 "                                                                            "
 "                                                                            "
 " Sections:                                                                  "
@@ -11,12 +11,20 @@
 "   04. Vim UI .................. User interface behavior                    "
 "   05. Text Formatting/Layout .. Text, tab, indentation related             "
 "   06. Custom Commands ......... Any custom command aliases                 "
+"   07. Remappings .............. Any of my remappings and shortcuts         "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 01. General                                                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
+set history=999
+set clipboard=unnamedplus,unnamed,autoselect
+set mouse=a
+set nobackup
+set nowb
+set noswapfile
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 02. Events                                                                 "
@@ -51,9 +59,9 @@ augroup markdown
   au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
-" Highlight characters that go over 80 columns (by drawing a border on the 81st)
+" Highlight characters that go over 160 columns (by drawing a border on the 161st... 80 always felt too narrow to me)
 if exists('+colorcolumn')
-  set colorcolumn=81
+  set colorcolumn=161
   highlight ColorColumn ctermbg=red
 else
   highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -69,7 +77,7 @@ set cul                   " highlight current line
 set laststatus=2          " last window always has a statusline
 set nohlsearch            " Don't continue to highlight searched phrases.
 set incsearch             " But do highlight as you type your search.
-set ignorecase            " Make searches case-insensitive.
+set smartcase             " Try to be smart about case when searching
 set ruler                 " Always show info along bottom.
 set showmatch
 set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P
@@ -94,3 +102,11 @@ set nowrap                " don't wrap text
 
 " Prettify JSON files making them easier to read
 command PrettyJSON %!python -m json.tool
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 07. Remappings                                                             "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Exit insert mode with jk
+inoremap jk <Esc>
+" Prefix my custom shortcuts with , character
+let mapleader=","
