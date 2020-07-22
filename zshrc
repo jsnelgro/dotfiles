@@ -28,7 +28,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx zsh-syntax-highlighting brew repo sudo knife bundler web-search)
+plugins=(git web-search zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -51,9 +51,6 @@ alias gdiff='git diff'
 alias gco='git checkout '
 # alias gk='gitk --all&'
 # alias gx='gitx --all'
-
-## Miscellaneous Aliases
-alias htop='sudo htop'
 
 # Shell Functions
 # qfind - used to quickly find files that contain a string in a directory
