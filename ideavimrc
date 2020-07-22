@@ -1,0 +1,30 @@
+" loads vimrc
+source ~/.vimrc
+
+set clipboard+=unnamed
+set rnu
+set nu
+set incsearch
+set hlsearch
+set surround
+set ignorecase
+set smartcase
+let mapleader = ","
+imap jk <Esc>
+nmap == :action ReformatCode<CR>
+nmap <leader>rr :action RenameElement<CR>
+nmap <leader>fu :action ShowUsages<CR>
+nmap <leader>ee :action QuickEvaluateExpression<CR>
+vmap <leader>ee :action QuickEvaluateExpression<CR>
+nmap <leader>aa :action Annotate<CR>
+noremap <leader>bb :action CompileProject<CR>
+set clipboard+=ideaputset clipboard+=ideaput
+
+" menu shortcuts. Every shortcut that opens a menu starts with <leader>m
+noremap <leader>mr :action Refactorings.QuickListPopupAction<CR>
+
+set multiple-cursors
+map <C-N>  <A-N>
+map <C-P>  <A-P>
+map <C-X>  <A-X>
+map g<C-N> g<A-N>
