@@ -1,6 +1,7 @@
 # Explicitly configured $PATH variable
 PATH=/usr/local/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/local/bin:/opt/local/sbin:/usr/X11/bin
 
+DOTFILES=~/dotfiles                    # dotfiles directory
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -8,8 +9,8 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="avit"
+ZSH_THEME="robbyrussell"
+# ZSH_THEME="avit"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -24,7 +25,7 @@ ZSH_THEME="avit"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="false"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -51,6 +52,7 @@ alias gdiff='git diff'
 alias gco='git checkout '
 # alias gk='gitk --all&'
 # alias gx='gitx --all'
+alias update-dotfiles='sh $DOTFILES/bin/makesymlinks.sh && source ~/.zshrc'
 
 # Shell Functions
 # qfind - used to quickly find files that contain a string in a directory
@@ -63,4 +65,14 @@ qfind () {
 ## Set EDITOR to /usr/bin/vim if Vim is installed
 if [ -f /usr/bin/vim ]; then
   export EDITOR=/usr/bin/vim
+fi
+
+if [[ `cd ~/dotfiles && git status --porcelain` ]]; then
+  # Changes
+  echo "Shell config has changes!\nRun \e[93mupdate-dotfiles\e[0m to update shell or sync $DOTFILES with git remote"
+fi
+
+# sets python version for current shell
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
 fi
