@@ -69,7 +69,7 @@ fi
 
 if [[ `cd ~/dotfiles && git status --porcelain` ]]; then
   # Changes
-  echo "Shell config has changes!\nRun \e[93mupdate-dotfiles\e[0m to update shell or sync $DOTFILES with git remote"
+  echo "\e[1mShell config has changes!\nRun \e[1;4;93mupdate-dotfiles\e[39;24m to update shell or sync $DOTFILES with git remote"
 fi
 
 # sets python version for current shell
