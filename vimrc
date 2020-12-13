@@ -19,7 +19,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
 set history=999
-set clipboard=unnamedplus,unnamed,autoselect
+"set clipboard=unnamedplus,unnamed,autoselect
 set mouse=a
 set nobackup
 set nowb
@@ -44,7 +44,7 @@ set ofu=syntaxcomplete#Complete
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256              " enable 256-color mode.
 syntax enable             " enable syntax highlighting (previously syntax on).
-colorscheme molokai       " set colorscheme
+"colorscheme molokai       " set colorscheme
 
 " Prettify JSON files
 autocmd BufRead,BufNewFile *.json set filetype=json
