@@ -1,5 +1,5 @@
 # Explicitly configured $PATH variable
-PATH=/usr/local/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/local/bin:/opt/local/sbin:/usr/X11/bin
+PATH=/usr/local/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/local/bin:/opt/local/sbin:/usr/X11/bin:~/dotfiles/bin
 
 DOTFILES=~/dotfiles                    # dotfiles directory
 # Path to your oh-my-zsh configuration.
@@ -50,6 +50,13 @@ alias gbr='git branch '
 alias gci='git commit'
 alias gdiff='git diff'
 alias gco='git checkout '
+
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.unstage 'reset HEAD --'
+
 # alias gk='gitk --all&'
 # alias gx='gitx --all'
 alias update-dotfiles='sh $DOTFILES/bin/makesymlinks.sh && source ~/.zshrc'

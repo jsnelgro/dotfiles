@@ -1,0 +1,5 @@
+#!/bin/sh
+# NOTE: can check boot entries using the command sudo efibootmgr
+# Windows is Boot0000 on this machine
+efibootmgr -n 0000 
+reboot
