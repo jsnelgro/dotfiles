@@ -1,5 +1,5 @@
 # Explicitly configured $PATH variable
-PATH=/usr/local/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/local/bin:/opt/local/sbin:/usr/X11/bin:~/dotfiles/bin
+PATH=$PATH:~/dotfiles/bin
 
 DOTFILES=~/dotfiles                    # dotfiles directory
 # Path to your oh-my-zsh configuration.
