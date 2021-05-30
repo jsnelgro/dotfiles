@@ -7,3 +7,8 @@
 	st = status
 	unstage = reset HEAD --
 	last = log -1 HEAD
+[user]
+	name = jsnelgro
+	email = jsnelgrov@gmail.com
+[push]
+	default = current
